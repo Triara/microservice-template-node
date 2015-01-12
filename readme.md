@@ -21,4 +21,4 @@ function addRoutes (service) {
 }
 
 module.exports = addRoutes;
-``
+```
