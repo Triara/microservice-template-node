@@ -12,7 +12,8 @@
     "request": "^2.47.0"
   },
   "scripts": {
-    "mocha": "./node_modules/mocha/bin/mocha tests --recursive"
+    "mocha": "./node_modules/mocha/bin/mocha tests --recursive",
+    "server": "node main.js"
   },
   "author": "Triara",
   "license": "MIT"
