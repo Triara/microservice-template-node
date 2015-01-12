@@ -10,7 +10,7 @@ To run tests and check everything is ok
 
 `npm run mocha`
 
-## How to add now routes
+## How to add new routes to server
 
 All files located inside the 'routes' folder will be loaded from the server. All they must export a single function`accepting a service param (the server itself).
 
@@ -21,4 +21,4 @@ function addRoutes (service) {
 }
 
 module.exports = addRoutes;
-```
+``
