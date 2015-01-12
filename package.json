@@ -1,0 +1,19 @@
+{
+  "name": "microservice-template-node",
+  "version": "0.0.1",
+  "description": "Template to be used in a microservice server creation, includes only simple heartbeat",
+  "main": "server.js",
+  "dependencies": {
+    "restify": "^2.8.3"
+  },
+  "devDependencies": {
+    "assert": "^1.1.2",
+    "mocha": "^2.0.1",
+    "request": "^2.47.0"
+  },
+  "scripts": {
+    "mocha": "./node_modules/mocha/bin/mocha tests --recursive"
+  },
+  "author": "Triara",
+  "license": "MIT"
+}
