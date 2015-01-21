@@ -1,4 +1,5 @@
-var assert = require('assert');
+var should = require('chai').should();
+var expect = require('chai').expect;
 var request = require('request');
 var server = require('../server.js');
 
@@ -20,8 +21,9 @@ describe("Server must be alive", function(){
 
     it("it must have a heartbeat", function(done){
         request(OPTIONS, function(err, res, body){
-            assert.equal(err, null);
-            assert.equal(res.statusCode, 200, body);
+            expect(err).to.be.null;
+            res.statusCode.should.equal(200);
+
             done();
         });
     });
