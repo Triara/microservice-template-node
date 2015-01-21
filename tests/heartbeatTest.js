@@ -18,7 +18,7 @@ describe("Server must be alive", function(){
         server.stop(done);
     });
 
-    it("and have a heartbeat", function(done){
+    it("it must have a heartbeat", function(done){
         request(OPTIONS, function(err, res, body){
             assert.equal(err, null);
             assert.equal(res.statusCode, 200, body);

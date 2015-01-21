@@ -8,4 +8,7 @@ function addRoutes (service) {
     service.get('/heartbeat', makeHeartbeat);
 }
 
-module.exports = addRoutes;
+module.exports = {
+    addRoutes: addRoutes,
+    makeHeartbeat: makeHeartbeat
+};

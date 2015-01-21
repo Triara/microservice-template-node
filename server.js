@@ -12,7 +12,7 @@ function startServer (port, cbk){
 
     var routesPath = path.join(__dirname, './routes/');
     fs.readdirSync(routesPath).forEach(function(filename) {
-        require(routesPath + filename)(server);
+        require(routesPath + filename).addRoutes(server);
     });
 
     server.listen(port, function(){
