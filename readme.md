@@ -6,9 +6,14 @@ To run the server on the port stored in the config file
 
 `npm run server`
 
-To run tests and check everything is ok
+To run unit tests and check everything is ok
 
 `npm run mocha`
+
+And to run acceptance tests
+
+`npm run cucumber`
+
 
 ## How to add new routes to server
 
