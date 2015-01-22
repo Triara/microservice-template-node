@@ -1,8 +1,18 @@
-var restify = require('restify');
-var fs = require('fs');
-var path = require('path');
+'use strict';
 
-function startServer (port, cbk){
+
+const restify = require('restify'),
+    fs = require('fs'),
+    path = require('path');
+
+module.exports = {
+    start: startServer,
+    stop: stopServer
+};
+
+let server;
+
+function startServer (port, callback){
     server = restify.createServer({
         name: 'simple microservice'
     });
@@ -10,23 +20,19 @@ function startServer (port, cbk){
     server.use(restify.queryParser());
     server.use(restify.bodyParser());
 
-    var routesPath = path.join(__dirname, './routes/');
+    let routesPath = path.join(__dirname, './routes/');
+
     fs.readdirSync(routesPath).forEach(function(filename) {
         require(routesPath + filename).addRoutes(server);
     });
 
     server.listen(port, function(){
-        cbk();
+        callback();
     });
 }
 
-function stopServer (cbk){
+function stopServer (callback){
     server.close(function(){
-        cbk();
+        callback();
     });
 }
-
-module.exports = {
-    start: startServer,
-    stop: stopServer
-};

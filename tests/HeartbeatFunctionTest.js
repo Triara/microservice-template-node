@@ -1,12 +1,15 @@
-var should = require('chai').should();
-var heartbeat = require('../routes/heartbeatRoute.js');
+'use strict';
+
+const should = require('chai').should(),
+    heartbeat = require('../routes/heartbeatRoute.js');
 
 describe('Heartbeat status', function(){
+
    it('must send back a response', function(){
-       var obtainedValue,
+       let obtainedValue,
            obtainedBody;
 
-       var res = {
+       let res = {
            send: function(value, body){
                obtainedValue = value;
                obtainedBody = body;
@@ -20,8 +23,8 @@ describe('Heartbeat status', function(){
    });
 
    it('must call the next function', function(done){
-       var res = {
-           send: function(value, body){}
+       let res = {
+           send: function(){}
        };
 
        heartbeat.makeHeartbeat(null, res, done);
