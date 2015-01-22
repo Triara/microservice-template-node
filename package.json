@@ -9,11 +9,14 @@
   "devDependencies": {
     "mocha": "^2.0.1",
     "request": "^2.47.0",
-    "chai": "^1.10.0"
+    "chai": "^1.10.0",
+    "cucumber": "^0.4.7",
+    "lodash": "lodash/lodash"
   },
   "scripts": {
     "mocha": "./node_modules/mocha/bin/mocha tests --recursive",
-    "server": "node main.js"
+    "server": "node main.js",
+    "cucumber": "node --harmony ./node_modules/cucumber/bin/cucumber.js -f pretty acceptance-tests -r acceptance-tests/lib"
   },
   "author": "Triara",
   "license": "MIT"
